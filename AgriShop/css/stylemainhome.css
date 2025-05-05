@@ -1,0 +1,333 @@
+body {
+    display: flex;
+    flex-direction: column; /* Stack navigation and content vertically */
+    padding-top: 60px; /* Adjust based on your navigation height */
+    background-color: #f4f4f4; /* Light background for overall page */
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-radius: 0;
+}
+
+.content-wrapper {
+    display: flex; /* Layout for SRP and main content */
+    flex-grow: 1; /* Take remaining vertical space */
+}
+
+.srp-container {
+    width: 350px; /* Adjusted width */
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-right: 1px solid #ddd; /* Lighter border */
+    margin-right: 20px;
+    position: sticky; /* Make it stick */
+    top: 70px; /* Adjust top position to account for navbar (plus a little extra) */
+    height: calc(100vh - 100px); /* Optional: Set a maximum height and subtract navbar height */
+    overflow-y: auto; /* Enable scrolling within the sticky container if content is long */
+}
+
+.srp-container h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #333; /* Darker text */
+}
+
+.srp-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #333; /* Darker text */
+}
+
+.srp-table th, .srp-table td {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.srp-table th {
+    background-color: #f0f0f0;
+    color: #555; /* Slightly lighter header text */
+}
+
+.srp-pagination {
+    margin-top: 15px;
+    color: #333; /* Darker text */
+}
+
+.srp-pagination a, .srp-pagination span {
+    display: inline-block;
+    padding: 6px 10px; /* Smaller padding */
+    margin-right: 5px;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333; /* Darker text */
+    font-size: 0.9em; /* Smaller font */
+}
+
+.srp-pagination a:hover {
+    background-color: #f0f0f0;
+}
+
+.srp-pagination .current {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.srp-pagination .disabled {
+    color: #888;
+    pointer-events: none;
+    background-color: #eee;
+    border-color: #eee;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Keep column direction for vertical stacking */
+    align-items: center; /* Initially center the feed container */
+}
+
+.feed-container {
+    width: 100%;
+    max-width: 1000px; /* Match the max-width of your posts */
+    display: flex;
+    flex-direction: column; /* Stack "Click to post" and posts vertically */
+    align-items: stretch; /* Make children take the full width of the container */
+}
+.post-button-container {
+    flex: 1;
+        background: #7e5e74;
+        padding: 10px 15px;
+        border-radius: 8px;
+        color: black;
+        text-align: left;
+        cursor: pointer;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        width: 80%;
+        max-width: 600px;
+}
+
+.post-button-container h3 {
+    margin: 0;
+    color: #000000;
+}
+.post-creation-container {
+    background-color: rgb(131, 131, 136);
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 1px;
+    margin-left: -85px;
+    margin-right: auto;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 80%;
+    max-width: 600px;
+    display: flex; /* Align profile info and placeholder */
+    align-items: center;
+}
+
+.profile-info-inline {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.profile-info-inline img {  
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 8px;
+    object-fit: cover;
+}
+
+.post-placeholder {
+    flex-grow: 1;
+    background-color: #ffffff; /* Light gray background like Facebook */
+    border-radius: 20px; /* Rounded corners like Facebook */
+    padding: 10px 15px;
+    color: #000000; /* Gray placeholder text */
+    font-size: 16px;
+}
+
+.post-placeholder:hover {
+    background-color: #acaeb1; /* Slightly darker on hover */
+}
+#postModal {
+    display: none; /* Hide the modal by default */
+}
+
+#postModal .modal-dialog {
+    margin-top: 100px; /* Adjust vertical position */
+}
+
+#postModal .modal-content {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+#postModal .modal-header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    color: #333; /* Darker text */
+}
+
+#postModal .modal-header h4 {
+    margin: 0;
+}
+
+#postModal .profile-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#postModal .profile-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+#postModal .profile-info strong {
+    font-size: 1.1em;
+    color: #333; /* Darker text */
+}
+
+#postModal textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    color: #333; /* Darker text */
+}
+
+#postModal input[type="file"] {
+    width: 100%;
+    margin-bottom: 10px;
+    color: #333; /* Darker text */
+}
+
+#postModal button[type="submit"] {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#postModal button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.post-display-container {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Add some space above the posts */
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 1px; /* Add spacing between the post container and other elements */
+    margin-left: -280px;
+    margin-right: auto;
+}
+
+.post {
+    width: 100%;
+    max-width: 500px;
+    background: #575454;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left; /* Align text to the left inside the post */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+    min-height: auto; /* Adjust min-height as needed */
+    color: white; /* Text color */
+}
+
+/* === POST HEADER === */
+.post-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px; /* Reduced font size for header */
+    color: white;
+    margin-bottom: 10px; /* Space between header and content */
+}
+
+.post-header-left {
+    display: flex;
+    align-items: center;
+}
+
+.post-header img {
+    width: 30px; /* Smaller profile image */
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+/* === USERNAME & TIME === */
+.username {
+    font-weight: bold;
+    color: white;
+}
+
+.time {
+    font-size: 0.8em;
+    color: #ccc;
+}
+
+/* === POST CONTENT (DESCRIPTION) === */
+.post-content {
+    color: white;
+    margin-bottom: 10px;
+    white-space: pre-line; /* Preserve line breaks */
+}
+
+/* === POST IMAGE === */
+.post-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: block; /* Prevent extra space below image */
+}

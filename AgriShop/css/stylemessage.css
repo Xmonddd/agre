@@ -1,0 +1,489 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Date separator styling */
+.timestamp-divider {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+margin: 15px 0;
+font-size: 12px;
+font-weight: bold;
+color: #666;
+position: relative;
+}
+
+.timestamp-divider::before,
+.timestamp-divider::after {
+content: "";
+flex: 1;
+border-top: 1px solid #ccc;
+margin: 0 10px;
+}
+
+/* Time separator styling */
+.time-divider {
+display: flex;
+justify-content: center;
+font-size: 10px;
+color: gray;
+margin: 5px 0;
+}
+.messenger-container {
+    display: flex;
+    height: 100vh;
+}
+
+.conversations {
+  /*  width: 250px; */
+    width: 500px;
+    border-right: 1px solid #ccc;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #f8f8f8; /* Light background */
+}
+
+.conversation-item.active {
+background-color: #d9d9d9 !important; /* Active effect */
+}
+
+.conversation-item {
+  
+    
+display: flex; /* Gamitin ang Flexbox */
+align-items: center; /* I-align sa gitna vertically */
+padding: 10px;
+border-bottom: 1px solid #ddd;
+cursor: pointer;
+background-color: #fff; /* White background */
+}
+
+.conversation-item img {
+width: 40px;
+height: 40px;
+border-radius: 50%; /* Para bilog ang profile picture */
+margin-right: 10px; /* Maglagay ng space sa kanan ng picture */
+}
+
+.conversation-item p {
+margin: 0;
+flex-grow: 1; /* Para manatili sa left side */
+text-align: left; /* Siguraduhin naka-align sa kaliwa */
+}
+
+.conversation-item.active:hover {
+background-color: #f0f0f0 !important;  /* Panatilihin ang hover effect kahit active */
+}
+
+.conversation-item:hover {
+    
+background-color: #d9d9d9 !important; /* Mas darker na grey */
+}
+
+    /* eto yung latest msg sa userlist*/
+    .conversation-details {
+flex-grow: 1;
+margin-left: 10px;
+overflow: hidden;
+}
+
+.conversation-header {
+display: flex;
+justify-content: space-between;
+}
+
+.conversation-name {
+font-weight: bold;
+margin: 0;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+.latest-message {
+margin: 2px 0;
+font-size: 0.9em;
+color: #666;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+.message-time {
+margin: 0;
+font-size: 0.8em;
+color: #999;
+text-align: right;
+}
+
+.received {
+flex-direction: row; /* Profile picture on the left */
+align-self: flex-start; 
+}
+.sent {
+flex-direction: row-reverse; /* Profile picture on the right */
+align-self: flex-end;
+}
+
+.message .profile-pic {
+width: 40px;
+height: 40px;
+border-radius: 50%;
+margin-right: 10px; /* Space between picture and message */
+flex-shrink: 0;
+background: none;
+}
+
+.message .message-content {
+background-color: #f1f1f1;
+padding: 10px;
+border-radius: 10px;
+max-width: 70%;
+}
+
+.sent .message-content {
+background-color: #007bff !important;
+color: white;
+align-self: flex-end;
+}
+
+.received .message-content {
+background-color: grey !important;
+color: white;
+align-self: flex-start;
+}
+
+
+.messages {
+
+
+    flex: 1 1 auto;
+padding: 20px;
+overflow-y: auto;
+display: flex;
+flex-direction: column;
+
+min-height: 0;
+max-height: calc(100vh - 150px); /* Adjust based on your header/input height */
+background-color: #e0e0e0;
+
+}
+.message-input-area {
+display: flex;
+align-items: center;
+padding: 10px;
+background: #f8f8f8;
+border-top: 1px solid #ddd;
+position: fixed;
+bottom: 0;
+width: 100%;
+left: 0;
+}
+.message-input-container {
+width: calc(100% - 250px); /* Subtract sidebar width */
+position: fixed;
+bottom: 0;
+left: 500px; /* Sidebar width */
+background: #f8f8f8;
+padding: 10px;
+border-top: 1px solid #ddd;
+display: flex;
+align-items: center;
+}
+.message-input-container button {
+padding: 10px 20px;
+background: #007bff;
+color: white;
+border: none;
+border-radius: 20px;
+cursor: pointer;
+font-size: 16px;
+}
+.message-input-container button:hover {
+background: #0056b3;
+}
+
+/* Make it responsive */
+@media (max-width: 768px) {
+.message-input-container {
+width: 100%;
+left: 0;
+}
+}
+
+.message-input {
+flex-grow: 1;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 20px 0 0 20px;
+outline: none;
+font-size: 16px;
+margin-right: 10px;
+}
+
+.message-input-area button {
+padding: 6px 12px;
+background: transparent;  /* Remove the blue background */
+color: #007bff;  /* Set the icon text color to blue or whatever you prefer */
+border: none;
+border-radius: 0 20px 20px 0;
+cursor: pointer;
+font-size: 18px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-left: 0;
+
+}
+
+.message-input-area button:hover {
+background: transparent;  /* No background change on hover */
+color: #0056b3;  /* Change the color on hover if needed */
+
+}
+.message-input-area {
+   display: flex;
+   position: absolute;
+bottom: 0;
+background: white; 
+padding: 10px;
+border-top: 1px solid #ccc; 
+width: 100%;
+align-items: center;
+
+}
+.message-input-area input {
+flex-grow: 1;  /* Makes the input field take the remaining space */
+border: 1px solid #ccc;
+padding: 8px 12px;
+border-radius: 20px;
+font-size: 14px;
+}
+
+.chat-container {
+    position: relative;
+    flex-direction: column;
+height: 100vh;
+}
+.message-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc; /* Border for input */
+    border-radius: 5px;
+    margin-right: 5px; /* Add some space between input and button */
+}
+.message .profile-pic {
+width: 40px;
+height: 40px;
+border-radius: 50%;
+margin-right: 10px;
+}
+.message .message-content {
+background-color: #f1f1f1;
+padding: 10px;
+border-radius: 10px;
+max-width: 70%;
+}
+.sent .message-content {
+background-color: #dcf8c6;
+}
+
+.received .message-content {
+background-color: #ffffff;
+}
+
+.message {
+display: flex;
+align-items: center; 
+gap: 10px; 
+margin-bottom: 10px;
+padding: 0;
+border-radius: 5px;
+max-width: 70%; 
+background: none;
+
+}
+
+.message-content {
+background-color: #f1f1f1;
+padding: 10px;
+border-radius: 10px;
+max-width: 100%;
+}
+
+.message span {
+flex-grow: 1; /* Allow message text to take up available space */
+}
+
+.message-settings {
+flex-shrink: 0; /* Prevent settings from shrinking */
+}
+
+.sent {
+    
+   /* text-align: left; */
+   align-self: flex-end;
+}
+
+.received {
+   /* background-color: #e6e6e6; */
+    /*text-align: left;*/
+    align-self: flex-start;
+    background: none;
+}
+
+.navbar {
+    background-color: #220430; /* kulay ng  navbar */
+    border-bottom: 1px solid #2980b9;
+    position: sticky; /* Make it stick */
+    top: 0; /* Stick to the top */
+    z-index: 100; /* Ensure it's above other elements */
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: white; /* White text */
+}
+
+.navbar-nav > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: white; /* White text */
+}
+
+.navbar-nav > li > a:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 20vh auto; /* Adjust top margin for vertical centering */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 400px; /* Reduced width */
+    max-width: 90%; /* Ensure it's responsive */
+}
+
+.modal-content h2 {
+    font-size: 1.2em; /* Smaller heading */
+    margin-bottom: 10px;
+}
+
+.modal-content label {
+    font-size: 0.9em; /* Smaller label text */
+    display: block;
+    margin-bottom: 5px;
+}
+
+.modal-content input[type="text"],
+.modal-content textarea {
+    width: calc(100% - 12px); /* Adjust width */
+    padding: 6px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing:border-box; /* Include padding and border in element's total width and height */
+    font-size: 0.9em; /* Smaller input text */
+}
+
+.modal-content button {
+    padding: 8px 15px; /* Smaller button padding */
+    font-size: 0.9em; /* Smaller button text */
+    margin-top: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.timestamp {
+font-size: 0.7em; /* Make the timestamp smaller */
+color: #888;
+margin-top: 5px; /* Add some space between the message and timestamp */
+text-align: right;
+}
+
+#deleteConfirmationModal .modal-content {
+    background-color: #fefefe;
+    margin: 20vh auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 400px;
+    max-width: 90%;
+}
+
+#deleteConfirmationModal h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+#deleteConfirmationModal p {
+    margin-bottom: 15px;
+}
+
+#deleteConfirmationModal button {
+    margin-right: 10px;
+}
+
+.message-settings {
+    position: relative;
+    display: inline-block;
+}
+
+.settings-icon {
+    cursor: pointer;
+    font-size: 1.2em;
+    margin-left: 10px;
+}
+
+.settings-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 10px 15px;
+    z-index: 1;
+    right: 0;
+}
+
+.settings-dropdown button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    border: none;
+    background-color: transparent;
+    padding: 5px 0;
+    cursor: pointer;
+    color: red;
+}
+

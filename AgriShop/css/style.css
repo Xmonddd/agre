@@ -1,0 +1,522 @@
+
+
+/* === GENERAL STYLES === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  color: #000000; /* Itim ang lahat ng text */
+  background-color: #d9a6a6;
+  text-align: center;
+}
+
+/* === LAYOUT === */
+.wrapper {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.full-width {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* === HEADER & NAVBAR === */
+.header {
+  width: 100%;
+  background-color: #3498db;
+}
+
+.navbar {
+  background: #ddd;
+  padding: 15px;
+  text-align: right;
+}
+
+/* === FOOTER === */
+.footer {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+/* === SIDEBAR === */
+.sidebar {
+  width: 200px;
+  background: #f0f0f0;
+  height: 100vh;
+  position: fixed;
+  padding-top: 20px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.sidebar a.active, .sidebar a:hover {
+  background: #00a2ff;
+  color: white;
+}
+
+/* === CONTENT CONTAINER === */
+.container {
+  width: 300px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* === FORM ELEMENTS === */
+input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* === POSTS SECTION === */
+.posts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.post {
+  width: 100%;
+  max-width: 500px;
+  background: #575454;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+  min-height: 300px;
+  color: white; /* Para makita ang text sa dark background */
+}
+
+/* === POST HEADER === */
+.post-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  color: white;
+}
+
+/* === USERNAME & TIME === */
+.username {
+  font-weight: bold;
+  color: white;
+}
+
+.time {
+  font-size: 12px;
+  color: #ccc;
+}
+
+
+
+/* === POST IMAGE === */
+.post-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* === ACTION BUTTONS (LIKE & COMMENT) === */
+.actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.actions span {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* === MAIN CONTENT AREA === */
+.main-content {
+  margin-left: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.college-logo {
+  width: 300px;
+  height: auto;
+}
+
+/* ewr */
+
+/* === GENERAL STYLES === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f8f8f8;
+  color: #333;
+  text-align: center;
+}
+
+/* === NAVBAR === */
+.navbar {
+  background: #220430;
+  padding: 15px;
+  border-radius: 0;
+  position: sticky; /* Make it stick */
+  top: 0; /* Stick to the top */
+  z-index: 100; /* Ensure it's above other elements */
+}
+
+.navbar-brand {
+  color: white !important;
+  font-weight: bold;
+}
+
+.navbar-nav > li > a {
+  color: white !important;
+}
+
+.navbar-nav > li > a:hover {
+  background: #2980b9;
+}
+
+/* === FORM CONTAINER === */
+.form-container {
+  background: white;
+  width: 400px;
+  padding: 20px;
+  margin: 50px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* === INPUT FIELDS === */
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* === FILE UPLOAD === */
+input[type="file"] {
+  padding: 5px;
+  background: #f9f9f9;
+}
+
+/* === BUTTON === */
+button {
+  width: 100%;
+  padding: 10px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #2980b9;
+}
+
+/* Styling para sa Post Header */
+.post-header {
+  display: flex;
+  align-items: center; /* Para naka-align sa gitna ang profile at name */
+  gap: 10px; /* Espasyo sa pagitan ng profile pic at pangalan */
+}
+
+/* Ginagawang bilog ang profile picture */
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+/* Pangalan ng user */
+.username {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  margin: 0; /* Alisin ang extra margin */
+  padding: 0;
+  line-height: 1; /* Para mas compact */
+}
+
+
+
+/* Oras ng post */
+.time {
+  font-size: 12px;
+  color: gray;
+}
+
+/* post */
+.post-container {
+  display: flex;
+  align-items: center;
+  background: rgb(131, 131, 136);;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 600px;
+  margin: 10px auto;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.post-box {
+  flex-grow: 1;
+    background-color: #ffffff; /* Light gray background like Facebook */
+    border-radius: 20px; /* Rounded corners like Facebook */
+    padding: 10px 15px;
+    color: #000000; /* Gray placeholder text */
+    font-size: 16px;
+}
+
+/* Position 3-dot menu to upper-right corner of each post */
+.post-header {
+  position: relative; /* Ensure dropdown stays inside */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Align name to left, menu to right */
+  padding: 10px;
+}
+
+/* Dropdown menu button inside post */
+.post-dropdown {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Ensure dropdown appears properly */
+.dropdown-menu {
+  position: absolute !important;
+  right: 0 !important;
+  left: auto !important;
+  transform: translate3d(0px, 35px, 0px) !important;
+  will-change: transform;
+  min-width: 130px;
+}
+
+/* Dropdown button icon */
+.post-dropdown button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.post-dropdown button:focus {
+  outline: none;
+}
+
+/* Dropdown Items */
+.dropdown-menu li a {
+  display: block;
+  padding: 8px 15px;
+  color: black !important;
+  text-decoration: none;
+  font-size: 14px;
+  background-color: transparent;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f5f5f5 !important;
+}
+
+.unread-badge {
+  background-color: #ff4444;
+  color: white;
+  border-radius: 50%;
+  width: 18px; /* Adjust depende sa laki ng number */
+  height: 18px;
+  font-size: 12px; /* Adjust depende sa gusto mong size */
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.message-icon {
+    color: #007bff; /* Example color */
+    font-size: 1.2em;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.message-icon:hover {
+    color: #0056b3;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Push items to the edges */
+}
+
+.post-header > div:first-child { /* Target the container with profile and name */
+    display: flex;
+    align-items: center;
+}
+
+.post-header > div:first-child > .profile-pic {
+    margin-right: 10px;
+}
+.navbar-nav > li > .dropdown-menu {
+    margin-top: 0; /* Remove the gap */
+}
+.dropdown-menu > li > a {
+    padding: 8px 15px;
+}
+.dropdown-toggle::after {
+    content: none; /* Remove the default dropdown arrow */
+}
+.navbar-nav > li > .dropdown-toggle {
+    padding-right: 15px; /* Adjust padding if needed */
+    padding-left: 15px; /* Adjust padding if needed */
+    padding-top: 8px; /* Vertically align the image */
+    padding-bottom: 8px; /* Vertically align the image */
+}
+.profile-pic-nav {
+    width: 30px; /* Adjust to your desired width */
+    height: 30px; /* Adjust to your desired height */
+    border-radius: 50%; /* Make it circular (optional) */
+    object-fit: cover; /* Prevent distortion */
+    margin-right: 5px; /* Add some spacing to the right of the image */
+    vertical-align: middle; /* Align the image with the text */
+}
+/* modal */
+.modal.fade .modal-dialog {
+  transition: transform 0.3s ease-out;
+}
+
+.modal.fade.show .modal-dialog {
+  transform: translate(0, 0);
+}
+
+.modal-content {
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fa; /* Light gray background */
+}
+.modal-header {
+  background-color: #007bff; /* Blue header */
+  color: white;
+  border-radius: 10px 10px 0 0;
+}
+.modal-title {
+  font-weight: bold;
+}
+.close {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.modal-body .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  border-radius: 25px;
+  padding: 12px 24px;
+  font-size: 16px;
+}
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+@media (max-width: 576px) {
+  .modal-dialog {
+      margin: 10px;
+      width: 100%;
+  }
+}
+
+
+/* === RESPONSIVENESS === */
+@media (max-width: 600px) {
+  .form-container {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .messenger-container {
+      flex-direction: column; /* Stack conversations and messages */
+  }
+}
+
